@@ -1,7 +1,6 @@
 ---
 import PageHero from '@/components/PageHero.astro';
 import LayoutMain from '@/layouts/LayoutMain.astro';
-import { Prism } from '@astrojs/prism';
 ---
 
 <LayoutMain title="How to use">
@@ -16,19 +15,18 @@ import { Prism } from '@astrojs/prism';
 
    <br />
 
-   <Prism
-      class="rounded-xl"
-      lang="js"
-      code={`    
+   <pre
+      class="language-javascript mt-4 rounded-md p-4">
+    <code class="" set:html={`module.exports = {
         theme: {
-            extend: {
-                colors: {
-                    primary: "#114F20",
-                    secondary: "#C3D9B6",
-                    accent: "#EDA415",
-                    background: "#F1F1F1",
-                },
+          extend: {
+            colors: {
+              primary: '#FF0000',
+              secondary: '#00FF00',
+              tertiary: '#0000FF',
             },
-        },`}
-   />
+          },
+        },
+      }`} />
+</pre>
 </LayoutMain>
