@@ -1,0 +1,40 @@
+---
+import Navbar from '@/components/layouts/Navbar.astro';
+import Sidebar from '@/components/layouts/sidebar/Index.astro';
+import '@/themes/prism-vsc-dark-plus.css';
+
+interface Props {
+   title: String;
+}
+let title = Astro.props.title;
+---
+
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <meta name="viewport" content="width=device-width" />
+      <meta name="generator" content={Astro.generator} />
+      <meta name="description" content="Astro Tailwind component" />
+      <title>{title}</title>
+   </head>
+   <body>
+      <Navbar />
+      <Sidebar> <slot /></Sidebar>
+   </body>
+   <style is:global>
+      .container {
+         max-width: 100%;
+         margin: 0 auto;
+         padding: 0 7px;
+      }
+
+      @media (min-width: 1440px) {
+         .container {
+            max-width: 1444px;
+            margin: 0 auto;
+            padding: 0 24px;
+         }
+      }
+   </style>
+</html>

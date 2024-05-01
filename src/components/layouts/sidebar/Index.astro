@@ -1,0 +1,26 @@
+---
+import SidebarItem from "./SidebarItem.astro";
+import SidebarSectionHeader from "./SidebarSectionHeader.astro";
+---
+
+<div class="container">
+    <div class="mt-6 grid grid-cols-12 gap-9">
+        <div class="col-span-2 flex flex-col justify-start items-stretch ">
+
+            <SidebarSectionHeader text="Getting started" />
+            <SidebarItem
+                href='/how-to-use'
+                ariaLabel="How to use"
+                text="How to use"
+            />
+            <br />
+            <SidebarSectionHeader text="Components" />
+            <SidebarItem
+                href='/'
+                ariaLabel="How to use"
+                text="How to use"
+            />
+        </div>
+        <div class="col-span-10"><slot/></div>
+    </div>
+</div>
